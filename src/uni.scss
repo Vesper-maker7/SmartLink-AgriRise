@@ -1,0 +1,320 @@
+/* ═══════════════════════════════════════════
+   智链兴农 — 参赛级设计系统
+   AI科技感 × 中国农业 × 绿色生态
+   ═══════════════════════════════════════════ */
+
+/* ========== 品牌色系 ========== */
+$primary: #0D7B3E;
+$primary-deep: #064E28;
+$primary-light: #10B981;
+$primary-mist: #D1FAE5;
+$primary-glow: rgba(13, 123, 62, 0.18);
+
+/* AI 科技色 */
+$ai-cyan: #00D4AA;
+$ai-blue: #0A84FF;
+$ai-purple: #7C3AED;
+$ai-gradient: linear-gradient(135deg, #0A84FF 0%, #00D4AA 100%);
+$ai-gradient-purple: linear-gradient(135deg, #7C3AED 0%, #0A84FF 100%);
+
+/* 中国农业暖色 */
+$earth-gold: #D4A853;
+$earth-amber: #F59E0B;
+$earth-warm: #F97316;
+$earth-rust: #C2410C;
+
+/* 中性色 */
+$text-100: #0F172A;
+$text-80: #334155;
+$text-60: #64748B;
+$text-40: #94A3B8;
+$text-20: #CBD5E1;
+$bg-base: #F0F4EF;
+$bg-card: #FFFFFF;
+$bg-card-hover: #F8FAF7;
+$border: #E8EDE8;
+$divider: #F2F5F1;
+
+/* ========== 阴影系统 ========== */
+$shadow-xs: 0 1rpx 3rpx rgba(0,0,0,0.04);
+$shadow-sm: 0 2rpx 8rpx rgba(0,0,0,0.06);
+$shadow-md: 0 6rpx 20rpx rgba(0,0,0,0.08);
+$shadow-lg: 0 12rpx 40rpx rgba(0,0,0,0.12);
+$shadow-glow-green: 0 4rpx 24rpx rgba(13,123,62,0.2);
+$shadow-glow-cyan: 0 4rpx 24rpx rgba(0,212,170,0.25);
+$shadow-glow-blue: 0 4rpx 24rpx rgba(10,132,255,0.2);
+
+/* ========== 圆角 ========== */
+$radius-xs: 6rpx;
+$radius-sm: 10rpx;
+$radius-md: 16rpx;
+$radius-lg: 24rpx;
+$radius-xl: 32rpx;
+$radius-full: 9999rpx;
+
+/* ========== 间距 ========== */
+$space-xs: 8rpx;
+$space-sm: 16rpx;
+$space-md: 24rpx;
+$space-lg: 32rpx;
+$space-xl: 48rpx;
+$space-2xl: 64rpx;
+
+/* ========== 字体 ========== */
+$font-xs: 20rpx;
+$font-sm: 24rpx;
+$font-md: 28rpx;
+$font-lg: 32rpx;
+$font-xl: 36rpx;
+$font-2xl: 44rpx;
+$font-3xl: 56rpx;
+
+/* ========== 动效 ========== */
+$ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+$ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+$transition-fast: 0.15s $ease-out;
+$transition-base: 0.3s $ease-out;
+$transition-slow: 0.5s $ease-out;
+
+/* ========== 全局基础 ========== */
+page {
+  background: $bg-base;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'PingFang SC',
+    'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+  font-size: $font-md;
+  color: $text-100;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+view { box-sizing: border-box; }
+
+/* ========== 安全区 ========== */
+.safe-area-bottom {
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.safe-area-top {
+  padding-top: var(--status-bar-height);
+}
+
+/* ========== 按钮系统 ========== */
+.btn-primary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, $primary, $primary-light);
+  color: #FFF;
+  border-radius: $radius-full;
+  font-size: $font-md;
+  font-weight: 600;
+  padding: 22rpx 48rpx;
+  border: none;
+  box-shadow: $shadow-glow-green;
+  transition: all $transition-base;
+  &:active {
+    opacity: 0.88;
+    transform: scale(0.97);
+  }
+}
+
+.btn-ai {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $ai-gradient;
+  color: #FFF;
+  border-radius: $radius-full;
+  font-size: $font-md;
+  font-weight: 600;
+  padding: 22rpx 48rpx;
+  border: none;
+  box-shadow: $shadow-glow-cyan;
+  transition: all $transition-base;
+  &:active {
+    opacity: 0.88;
+    transform: scale(0.97);
+  }
+}
+
+.btn-outline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  color: $primary;
+  border: 2rpx solid $primary;
+  border-radius: $radius-full;
+  font-size: $font-md;
+  font-weight: 600;
+  padding: 20rpx 44rpx;
+  transition: all $transition-base;
+  &:active {
+    background: $primary-mist;
+  }
+}
+
+/* ========== 卡片系统 ========== */
+.card {
+  background: $bg-card;
+  border-radius: $radius-lg;
+  padding: $space-md;
+  box-shadow: $shadow-sm;
+  margin: $space-sm $space-md;
+  transition: all $transition-base;
+}
+
+.card-glass {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20rpx);
+  -webkit-backdrop-filter: blur(20rpx);
+  border-radius: $radius-lg;
+  border: 1rpx solid rgba(255,255,255,0.6);
+  box-shadow: $shadow-md;
+}
+
+.card-glow {
+  background: $bg-card;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-glow-green;
+  position: relative;
+  overflow: hidden;
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3rpx;
+    background: linear-gradient(90deg, transparent, $primary-light, transparent);
+    opacity: 0.6;
+  }
+}
+
+/* ========== 渐变文字 ========== */
+.text-gradient-green {
+  background: linear-gradient(135deg, $primary-deep, $primary-light);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-ai {
+  background: $ai-gradient;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-gold {
+  background: linear-gradient(135deg, $earth-gold, $earth-amber);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ========== AI 标签 ========== */
+.ai-tag {
+  display: inline-flex;
+  align-items: center;
+  background: linear-gradient(135deg, rgba(0,212,170,0.12), rgba(10,132,255,0.12));
+  border: 1rpx solid rgba(0,212,170,0.25);
+  color: $ai-blue;
+  font-size: $font-xs;
+  padding: 4rpx 14rpx;
+  border-radius: $radius-full;
+  font-weight: 600;
+  letter-spacing: 1rpx;
+  &::before {
+    content: '✦';
+    margin-right: 6rpx;
+    color: $ai-cyan;
+    font-size: 16rpx;
+  }
+}
+
+.ai-dot {
+  display: inline-block;
+  width: 10rpx;
+  height: 10rpx;
+  background: $ai-cyan;
+  border-radius: 50%;
+  margin-right: 8rpx;
+  animation: ai-dot-pulse 2s $ease-out infinite;
+}
+
+@keyframes ai-dot-pulse {
+  0%, 100% { opacity: 1; box-shadow: 0 0 6rpx $ai-cyan; }
+  50% { opacity: 0.4; box-shadow: 0 0 16rpx $ai-cyan; }
+}
+
+/* ========== 文字省略 ========== */
+.text-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.text-ellipsis-2 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+/* ========== 呼吸动画 ========== */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20rpx); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInScale {
+  from { opacity: 0; transform: scale(0.92); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8rpx); }
+}
+
+@keyframes rotate-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes ripple {
+  0% { box-shadow: 0 0 0 0 rgba(0,212,170,0.4); }
+  100% { box-shadow: 0 0 0 24rpx rgba(0,212,170,0); }
+}
+
+.anim-fade-in { animation: fadeInUp 0.5s $ease-out both; }
+.anim-fade-scale { animation: fadeInScale 0.4s $ease-out both; }
+.anim-float { animation: float 3s ease-in-out infinite; }
+
+/* 交错动画延迟 */
+@for $i from 1 through 10 {
+  .anim-delay-#{$i} { animation-delay: #{$i * 0.08}s; }
+}
+
+/* ========== 渐变背景色 ========== */
+.bg-gradient-page {
+  background: linear-gradient(180deg, #E8F5EC 0%, #F0F4EF 30%, #F5F7F4 60%, #FAFBFA 100%);
+}
+
+.bg-gradient-hero {
+  background: linear-gradient(160deg, #064E28 0%, #0D7B3E 40%, #10B981 70%, #00D4AA 100%);
+}
+
+.bg-gradient-ai {
+  background: linear-gradient(135deg, #0A84FF 0%, #7C3AED 50%, #00D4AA 100%);
+}
+
+.bg-dots {
+  background-image: radial-gradient(rgba(13,123,62,0.1) 1rpx, transparent 1rpx);
+  background-size: 40rpx 40rpx;
+}

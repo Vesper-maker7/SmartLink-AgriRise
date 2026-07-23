@@ -1,0 +1,170 @@
+{
+  "easycom": {
+    "autoscan": true,
+    "custom": {
+      "^c-(.*)": "@/components/c-$1/c-$1.vue"
+    }
+  },
+  "pages": [
+    {
+      "path": "pages/identity/index",
+      "style": {
+        "navigationBarTitleText": "智链兴农",
+        "navigationStyle": "custom",
+        "navigationBarTextStyle": "white"
+      }
+    },
+    {
+      "path": "pages/consumer/home/index",
+      "style": {
+        "navigationBarTitleText": "智链兴农",
+        "navigationStyle": "custom",
+        "navigationBarTextStyle": "white"
+      }
+    },
+    {
+      "path": "pages/consumer/mall/index",
+      "style": {
+        "navigationBarTitleText": "商城",
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/consumer/mall/detail",
+      "style": {
+        "navigationBarTitleText": "商品详情"
+      }
+    },
+    {
+      "path": "pages/consumer/mall/cart",
+      "style": {
+        "navigationBarTitleText": "购物车",
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/consumer/mall/order-confirm",
+      "style": {
+        "navigationBarTitleText": "确认订单",
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/consumer/mall/order-list",
+      "style": {
+        "navigationBarTitleText": "我的订单",
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/consumer/ai-center/index",
+      "style": {
+        "navigationBarTitleText": "AI农业生活中心",
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/consumer/flavor-map/index",
+      "style": {
+        "navigationBarTitleText": "AI风味地图",
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/consumer/profile/index",
+      "style": {
+        "navigationBarTitleText": "我的",
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/farmer/home/index",
+      "style": {
+        "navigationBarTitleText": "AI智慧农场",
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/farmer/products/index",
+      "style": {
+        "navigationBarTitleText": "商品管理",
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/farmer/orders/index",
+      "style": {
+        "navigationBarTitleText": "订单管理",
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/farmer/farm-log/index",
+      "style": {
+        "navigationBarTitleText": "农事记录",
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/farmer/trace/index",
+      "style": {
+        "navigationBarTitleText": "溯源管理",
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/farmer/stats/index",
+      "style": {
+        "navigationBarTitleText": "数据中心",
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/farmer/profile/index",
+      "style": {
+        "navigationBarTitleText": "我的",
+        "navigationStyle": "custom"
+      }
+    }
+  ],
+  "globalStyle": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "智链兴农",
+    "navigationBarBackgroundColor": "#0D7B3E",
+    "backgroundColor": "#F0F4EF",
+    "backgroundTextStyle": "light"
+  },
+  "tabBar": {
+    "custom": true,
+    "color": "#8E8E93",
+    "selectedColor": "#2D8B3E",
+    "backgroundColor": "#FFFFFF",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/consumer/home/index",
+        "text": "首页",
+        "iconPath": "static/icons/home.png",
+        "selectedIconPath": "static/icons/home-active.png"
+      },
+      {
+        "pagePath": "pages/consumer/mall/index",
+        "text": "商城",
+        "iconPath": "static/icons/mall.png",
+        "selectedIconPath": "static/icons/mall-active.png"
+      },
+      {
+        "pagePath": "pages/consumer/ai-center/index",
+        "text": "AI生活",
+        "iconPath": "static/icons/flavor.png",
+        "selectedIconPath": "static/icons/flavor-active.png"
+      },
+      {
+        "pagePath": "pages/consumer/profile/index",
+        "text": "我的",
+        "iconPath": "static/icons/profile.png",
+        "selectedIconPath": "static/icons/profile-active.png"
+      }
+    ]
+  }
+}

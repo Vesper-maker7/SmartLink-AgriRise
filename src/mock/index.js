@@ -1,0 +1,889 @@
+/* 智链兴农 Mock 数据 */
+
+// ==================== 商品数据 ====================
+export const products = [
+  {
+    id: 1,
+    name: '天山有机雪莲果',
+    price: 68.00,
+    originalPrice: 98.00,
+    unit: '箱',
+    image: 'https://via.placeholder.com/400x400/2D8B3E/FFFFFF?text=雪莲果',
+    images: [
+      'https://via.placeholder.com/750x750/2D8B3E/FFFFFF?text=雪莲果主图',
+      'https://via.placeholder.com/750x750/4CAF50/FFFFFF?text=雪莲果细节',
+      'https://via.placeholder.com/750x750/1B5E20/FFFFFF?text=雪莲果包装'
+    ],
+    category: '水果',
+    origin: '新疆天山',
+    sales: 2389,
+    rating: 4.8,
+    desc: '源自天山雪水灌溉的有机雪莲果，富含膳食纤维和多种维生素，口感清甜脆嫩，是天然的健康之选。',
+    traceCode: 'ZL202607001',
+    trace: {
+      seed: { title: '种子来源', content: '天山原生雪莲果种苗，经有机认证' },
+      plant: { title: '种植过程', content: '2025年3月-2025年9月，天山脚下有机种植，全程无农药' },
+      fertilize: { title: '施肥记录', content: '2025年4月-7月，共施用有机肥3次，天然羊粪发酵肥料' },
+      harvest: { title: '采摘时间', content: '2025年9月15日，人工精细采摘，37°清晨采摘保鲜' },
+      transport: { title: '物流信息', content: '冷链运输，从新疆·天山36小时内直达' }
+    },
+    aiAdvice: '根据您的健康档案，雪莲果富含菊粉和低聚果糖，有助于调节肠道菌群，改善消化功能。建议每日食用100-150g，可生食或炖汤。搭配枸杞食用效果更佳。',
+    isRecommended: true,
+    isNew: true,
+    farmerId: 1,
+    farmerName: '天山有机农场'
+  },
+  {
+    id: 2,
+    name: '五常有机大米5kg',
+    price: 89.00,
+    originalPrice: 128.00,
+    unit: '袋',
+    image: 'https://via.placeholder.com/400x400/4CAF50/FFFFFF?text=五常大米',
+    images: [
+      'https://via.placeholder.com/750x750/4CAF50/FFFFFF?text=五常大米主图',
+      'https://via.placeholder.com/750x750/66BB6A/FFFFFF?text=五常大米细节'
+    ],
+    category: '粮油',
+    origin: '黑龙江五常',
+    sales: 5126,
+    rating: 4.9,
+    desc: '五常核心产区有机大米，采用传统农耕方式，一年一季，颗颗晶莹饱满，饭香浓郁软糯。',
+    traceCode: 'ZL202607002',
+    trace: {
+      seed: { title: '品种', content: '五优稻4号（稻花香2号）' },
+      plant: { title: '种植', content: '2025年4月育苗，5月插秧，有机标准种植' },
+      fertilize: { title: '施肥', content: '有机发酵肥+天然河水灌溉' },
+      harvest: { title: '收割', content: '2025年9月20日，人工收割晾晒' },
+      transport: { title: '加工运输', content: '低温存储，现碾现发，48小时直达' }
+    },
+    aiAdvice: '五常大米属于粳米，GI值约为68，适合一般人群食用。根据您近期的饮食偏好，建议每餐搭配深色蔬菜和优质蛋白，构建均衡膳食。',
+    isRecommended: true,
+    isNew: false,
+    farmerId: 2,
+    farmerName: '五常稻香合作社'
+  },
+  {
+    id: 3,
+    name: '云南古树普洱生茶',
+    price: 298.00,
+    originalPrice: 398.00,
+    unit: '饼',
+    image: 'https://via.placeholder.com/400x400/1B5E20/FFFFFF?text=古树普洱',
+    images: [
+      'https://via.placeholder.com/750x750/1B5E20/FFFFFF?text=普洱茶主图',
+      'https://via.placeholder.com/750x750/388E3C/FFFFFF?text=普洱茶细节'
+    ],
+    category: '茶叶',
+    origin: '云南西双版纳',
+    sales: 1567,
+    rating: 4.9,
+    desc: '300年古树头春原料，传统手工石磨压制，汤色金黄透亮，回甘生津持久，具有极高的品饮和收藏价值。',
+    traceCode: 'ZL202607003',
+    trace: {
+      seed: { title: '茶树', content: '西双版纳古六大茶山，300年以上古树' },
+      plant: { title: '生长环境', content: '海拔1600-2000m云雾山区，原始生态' },
+      fertilize: { title: '管理方式', content: '自然生长，无人工干预，零农药零化肥' },
+      harvest: { title: '采摘', content: '2025年4月头春采摘，一芽二叶标准' },
+      transport: { title: '加工运输', content: '传统日晒杀青，石磨压制成饼，全程避光存储' }
+    },
+    aiAdvice: '普洱生茶富含茶多酚，有助于降脂和抗氧化。建议饭后1小时饮用，每日2-3泡为宜。脾胃虚寒者建议选择普洱熟茶。',
+    isRecommended: false,
+    isNew: true,
+    farmerId: 3,
+    farmerName: '版纳古茶坊'
+  },
+  {
+    id: 4,
+    name: '宁夏中宁枸杞500g',
+    price: 45.00,
+    originalPrice: 65.00,
+    unit: '袋',
+    image: 'https://via.placeholder.com/400x400/FF6B35/FFFFFF?text=枸杞',
+    images: [
+      'https://via.placeholder.com/750x750/FF6B35/FFFFFF?text=枸杞主图',
+      'https://via.placeholder.com/750x750/FF8A65/FFFFFF?text=枸杞细节'
+    ],
+    category: '干货',
+    origin: '宁夏中宁',
+    sales: 8912,
+    rating: 4.7,
+    desc: '宁夏中宁核心产区头茬枸杞，粒大肉厚，甘甜回味，泡水不浑浊，是药食同源的上等滋补品。',
+    traceCode: 'ZL202607004',
+    trace: {
+      seed: { title: '品种', content: '宁杞7号，中宁地道品种' },
+      plant: { title: '种植', content: '2025年4月-8月，黄河水灌溉，有机种植' },
+      fertilize: { title: '施肥', content: '农家有机肥，物理防虫' },
+      harvest: { title: '采摘', content: '2025年7月头茬采摘，手工精选' },
+      transport: { title: '加工运输', content: '自然晾晒，低温烘干，密封防潮运输' }
+    },
+    aiAdvice: '枸杞富含枸杞多糖和玉米黄质，有助于保护视力和增强免疫力。推荐每日食用15-20g，可泡水、煮粥或直接嚼食。',
+    isRecommended: true,
+    isNew: false,
+    farmerId: 4,
+    farmerName: '中宁枸杞基地'
+  },
+  {
+    id: 5,
+    name: '赣南脐橙特级果5斤',
+    price: 39.90,
+    originalPrice: 59.90,
+    unit: '箱',
+    image: 'https://via.placeholder.com/400x400/FF7A00/FFFFFF?text=脐橙',
+    images: [
+      'https://via.placeholder.com/750x750/FF7A00/FFFFFF?text=脐橙主图',
+      'https://via.placeholder.com/750x750/FFB74D/FFFFFF?text=脐橙细节'
+    ],
+    category: '水果',
+    origin: '江西赣州',
+    sales: 12345,
+    rating: 4.8,
+    desc: '国家地理标志产品，果大形正，橙红鲜艳，肉质脆嫩化渣，风味浓甜芳香，富含维生素C。',
+    traceCode: 'ZL202607005',
+    trace: {
+      seed: { title: '品种', content: '纽荷尔脐橙，赣南优选品种' },
+      plant: { title: '种植', content: '红壤丘陵种植，昼夜温差大，糖分积累充分' },
+      fertilize: { title: '施肥', content: '有机菌肥+微量元素叶面肥' },
+      harvest: { title: '采摘', content: '2025年11月，树上自然成熟后采摘' },
+      transport: { title: '运输', content: '产地直发，智能分选，48小时新鲜到家' }
+    },
+    aiAdvice: '脐橙维C含量丰富，每天一个即可满足成人维C日需求。果皮含有橙皮苷，可泡水饮用。建议早上食用，吸收效果最佳。',
+    isRecommended: false,
+    isNew: false,
+    farmerId: 5,
+    farmerName: '赣南橙意合作社'
+  },
+  {
+    id: 6,
+    name: '长白山野生黑木耳',
+    price: 52.00,
+    originalPrice: 78.00,
+    unit: '袋',
+    image: 'https://via.placeholder.com/400x400/5D4037/FFFFFF?text=黑木耳',
+    images: [
+      'https://via.placeholder.com/750x750/5D4037/FFFFFF?text=黑木耳主图',
+      'https://via.placeholder.com/750x750/795548/FFFFFF?text=黑木耳细节'
+    ],
+    category: '干货',
+    origin: '吉林长白山',
+    sales: 3678,
+    rating: 4.6,
+    desc: '长白山野生环境培育，朵大肉厚，胶质丰富，口感爽滑脆嫩，是天然的高铁食材。',
+    traceCode: 'ZL202607006',
+    trace: {
+      seed: { title: '菌种', content: '长白山野生菌种培育' },
+      plant: { title: '培育环境', content: '长白山天然柞木段栽，原始森林环境' },
+      fertilize: { title: '管理', content: '天然雨水+山泉水喷淋，无任何添加' },
+      harvest: { title: '采摘', content: '春秋两季手工采摘' },
+      transport: { title: '加工运输', content: '自然晾晒，真空包装，防潮运输' }
+    },
+    aiAdvice: '黑木耳铁含量是猪肝的7倍，富含膳食纤维和植物胶质，有助于清洁肠道。建议每周食用2-3次，泡发后需充分煮熟。',
+    isRecommended: false,
+    isNew: false,
+    farmerId: 6,
+    farmerName: '长白山菌菇基地'
+  },
+  {
+    id: 8,
+    name: '郫县豆瓣酱 1kg',
+    price: 28.00,
+    originalPrice: 36.00,
+    unit: '瓶',
+    image: 'https://via.placeholder.com/400x400/E53935/FFFFFF?text=豆瓣酱',
+    images: ['https://via.placeholder.com/750x750/E53935/FFFFFF?text=豆瓣酱'],
+    category: '干货',
+    origin: '四川郫县',
+    sales: 15200,
+    rating: 4.8,
+    desc: '正宗郫县豆瓣酱，川菜之魂，三年陈酿，色泽红润，酱香浓郁，辣而不燥。',
+    traceCode: 'ZL202607008',
+    trace: {
+      seed: { title: '原料', content: '四川本地二荆条辣椒+蚕豆' },
+      plant: { title: '种植', content: '郫县核心产区，有机种植' },
+      fertilize: { title: '酿造', content: '传统工艺发酵，陶缸陈酿三年' },
+      harvest: { title: '制作', content: '人工翻晒，自然发酵' },
+      transport: { title: '包装运输', content: '密封玻璃瓶装，冷链运输' }
+    },
+    aiAdvice: '郫县豆瓣酱富含氨基酸和有益菌，炒菜提鲜效果佳。建议少油小火煸出红油后使用，风味更佳。',
+    isRecommended: true, isNew: false, farmerId: 8, farmerName: '郫县豆瓣合作社'
+  },
+  {
+    id: 9,
+    name: '文山有机三七粉',
+    price: 158.00,
+    originalPrice: 198.00,
+    unit: '盒',
+    image: 'https://via.placeholder.com/400x400/8D6E63/FFFFFF?text=三七粉',
+    images: ['https://via.placeholder.com/750x750/8D6E63/FFFFFF?text=三七粉'],
+    category: '干货',
+    origin: '云南文山',
+    sales: 5620,
+    rating: 4.9,
+    desc: '云南文山道地产区有机三七，超微粉碎工艺，吸收率提升3倍，是传统名贵中药材。',
+    traceCode: 'ZL202607009',
+    trace: {
+      seed: { title: '品种', content: '文山三七，道地品种' },
+      plant: { title: '种植', content: '海拔1500米红壤种植，三年生长期' },
+      fertilize: { title: '管理', content: '有机施肥，人工除草' },
+      harvest: { title: '采收', content: '三年满期手工采挖，清洗切片' },
+      transport: { title: '加工运输', content: '低温超微粉碎，充氮密封包装' }
+    },
+    aiAdvice: '三七粉具有活血化瘀功效，建议每日3-5g温水冲服，孕妇及经期慎用。',
+    isRecommended: false, isNew: true, farmerId: 9, farmerName: '文山三七基地'
+  },
+  {
+    id: 10,
+    name: '四川雅安藏茶',
+    price: 188.00,
+    originalPrice: 238.00,
+    unit: '砖',
+    image: 'https://via.placeholder.com/400x400/6D4C41/FFFFFF?text=藏茶',
+    images: ['https://via.placeholder.com/750x750/6D4C41/FFFFFF?text=藏茶'],
+    category: '茶叶',
+    origin: '四川雅安',
+    sales: 3200,
+    rating: 4.7,
+    desc: '雅安藏茶，千年茶马古道非遗技艺，深度发酵黑茶，醇和回甘，藏族同胞的生活必需品。',
+    traceCode: 'ZL202607010',
+    trace: {
+      seed: { title: '原料', content: '雅安高山小叶种茶树' },
+      plant: { title: '种植', content: '海拔1200米以上高山茶园' },
+      fertilize: { title: '工艺', content: '非遗传承人监制，32道工序深度发酵' },
+      harvest: { title: '陈化', content: '自然陈化3年以上，愈陈愈香' },
+      transport: { title: '包装运输', content: '手工绵纸包裹，竹篾封装' }
+    },
+    aiAdvice: '藏茶富含茶褐素和益生菌，有助于消食解腻，适合搭配牛羊肉饮用。',
+    isRecommended: true, isNew: false, farmerId: 10, farmerName: '雅安藏茶工坊'
+  },
+  {
+    id: 11,
+    name: '武夷岩茶大红袍',
+    price: 368.00,
+    originalPrice: 468.00,
+    unit: '盒',
+    image: 'https://via.placeholder.com/400x400/2E7D32/FFFFFF?text=大红袍',
+    images: ['https://via.placeholder.com/750x750/2E7D32/FFFFFF?text=大红袍'],
+    category: '茶叶',
+    origin: '福建武夷山',
+    sales: 2800,
+    rating: 4.9,
+    desc: '武夷山核心产区大红袍，岩骨花香，七泡有余香，中国十大名茶之首。',
+    traceCode: 'ZL202607011',
+    trace: {
+      seed: { title: '品种', content: '武夷名丛，大红袍母树无性繁殖' },
+      plant: { title: '种植', content: '武夷岩谷丹霞地貌，烂石砾壤' },
+      fertilize: { title: '管理', content: '传统耕作，茶豆间作生态种植' },
+      harvest: { title: '制作', content: '非遗传承人手工摇青炭焙' },
+      transport: { title: '包装运输', content: '锡罐密封，恒温恒湿配送' }
+    },
+    aiAdvice: '大红袍性温，茶多酚含量高，有助于提神醒脑和抗氧化，建议95°C水温冲泡。',
+    isRecommended: true, isNew: false, farmerId: 11, farmerName: '武夷山茶庄'
+  },
+  {
+    id: 12,
+    name: '东北黑木耳 500g',
+    price: 32.00,
+    originalPrice: 42.00,
+    unit: '袋',
+    image: 'https://via.placeholder.com/400x400/3E2723/FFFFFF?text=黑木耳',
+    images: ['https://via.placeholder.com/750x750/3E2723/FFFFFF?text=黑木耳'],
+    category: '干货',
+    origin: '黑龙江大兴安岭',
+    sales: 8900,
+    rating: 4.6,
+    desc: '大兴安岭野生环境培育黑木耳，朵大肉厚，泡发率高，口感爽脆，天然高铁食材。',
+    traceCode: 'ZL202607012',
+    trace: { seed: { title: '菌种', content: '大兴安岭野生菌种' }, plant: { title: '培育', content: '天然柞木段栽，原始森林环境' }, fertilize: { title: '管理', content: '山泉水喷淋，零添加' }, harvest: { title: '采摘', content: '春秋两季手工采摘' }, transport: { title: '加工', content: '自然晾晒，真空防潮包装' } },
+    aiAdvice: '黑木耳含铁量高，膳食纤维丰富，有助于肠道健康，泡发后需充分煮熟食用。',
+    isRecommended: false, isNew: false, farmerId: 2, farmerName: '大兴安岭菌菇基地'
+  },
+  {
+    id: 13,
+    name: '宁夏滩羊肉礼盒 3kg',
+    price: 268.00,
+    originalPrice: 328.00,
+    unit: '盒',
+    image: 'https://via.placeholder.com/400x400/FF7043/FFFFFF?text=滩羊肉',
+    images: ['https://via.placeholder.com/750x750/FF7043/FFFFFF?text=滩羊肉'],
+    category: '禽蛋',
+    origin: '宁夏盐池',
+    sales: 4100,
+    rating: 4.8,
+    desc: '盐池滩羊，国家地理标志产品，食甘草饮盐泉，肉质细嫩无膻味，火锅烧烤首选。',
+    traceCode: 'ZL202607013',
+    trace: { seed: { title: '品种', content: '盐池滩羊，国家级畜禽遗传资源' }, plant: { title: '饲养', content: '草原散养，食甘草苦豆子等中草药' }, fertilize: { title: '水源', content: '盐碱地深层矿泉水' }, harvest: { title: '加工', content: '清真屠宰，排酸72小时' }, transport: { title: '配送', content: '全程冷链，48小时直达' } },
+    aiAdvice: '滩羊肉胆固醇含量比普通羊肉低30%，富含共轭亚油酸，清炖最佳。',
+    isRecommended: true, isNew: false, farmerId: 13, farmerName: '盐池滩羊牧场'
+  },
+  {
+    id: 14,
+    name: '阿克苏冰糖心苹果 5kg',
+    price: 42.00,
+    originalPrice: 58.00,
+    unit: '箱',
+    image: 'https://via.placeholder.com/400x400/E91E63/FFFFFF?text=阿克苏苹果',
+    images: ['https://via.placeholder.com/750x750/E91E63/FFFFFF?text=阿克苏苹果'],
+    category: '水果',
+    origin: '新疆阿克苏',
+    sales: 23000,
+    rating: 4.7,
+    desc: '新疆阿克苏红旗坡核心产区，天山雪水灌溉，日照超16小时，糖心晶莹，脆甜多汁。',
+    traceCode: 'ZL202607014',
+    trace: { seed: { title: '品种', content: '红富士优选，阿克苏特色糖心品种' }, plant: { title: '种植', content: '天山脚下，雪水灌溉，昼夜温差20°C' }, fertilize: { title: '管理', content: '有机施肥，生物防虫' }, harvest: { title: '采摘', content: '霜降后人工采摘，逐颗筛选' }, transport: { title: '配送', content: '冷链保鲜，产地直发72小时到家' } },
+    aiAdvice: '冰糖心苹果糖分高于普通苹果30%，富含果胶，建议带皮食用以获取更多膳食纤维。',
+    isRecommended: true, isNew: false, farmerId: 14, farmerName: '阿克苏红旗坡果园'
+  },
+  {
+    id: 15,
+    name: '吐鲁番无核白葡萄干',
+    price: 35.00,
+    originalPrice: 45.00,
+    unit: '袋',
+    image: 'https://via.placeholder.com/400x400/8BC34A/FFFFFF?text=葡萄干',
+    images: ['https://via.placeholder.com/750x750/8BC34A/FFFFFF?text=葡萄干'],
+    category: '干货',
+    origin: '新疆吐鲁番',
+    sales: 18000,
+    rating: 4.5,
+    desc: '吐鲁番葡萄沟特级无核白，自然晾房阴干，颗颗饱满，甜而不腻，零添加。',
+    traceCode: 'ZL202607015',
+    trace: { seed: { title: '品种', content: '吐鲁番无核白，600年栽培历史' }, plant: { title: '种植', content: '火焰山脚下，坎儿井水灌溉' }, fertilize: { title: '管理', content: '有机种植，人工修剪' }, harvest: { title: '加工', content: '传统晾房自然阴干，无硫无添加' }, transport: { title: '包装', content: '密封袋装，避光防潮' } },
+    aiAdvice: '葡萄干富含铁和钾，天然能量补给，建议每日一小把作为零食，运动后食用效果更佳。',
+    isRecommended: false, isNew: false, farmerId: 14, farmerName: '吐鲁番葡萄沟合作社'
+  },
+  {
+    id: 16,
+    name: '温县铁棍山药 3kg',
+    price: 58.00,
+    originalPrice: 78.00,
+    unit: '箱',
+    image: 'https://via.placeholder.com/400x400/BCAAA4/FFFFFF?text=铁棍山药',
+    images: ['https://via.placeholder.com/750x750/BCAAA4/FFFFFF?text=铁棍山药'],
+    category: '蔬菜',
+    origin: '河南温县',
+    sales: 12000,
+    rating: 4.6,
+    desc: '怀山药核心产区，垆土地种植，粉性足药性佳，口感绵密糯甜，药食同源上品。',
+    traceCode: 'ZL202607016',
+    trace: { seed: { title: '品种', content: '铁棍山药，四大怀药之一' }, plant: { title: '种植', content: '温县垆土地，黄河故道冲积土壤' }, fertilize: { title: '管理', content: '有机肥深施，人工搭架' }, harvest: { title: '采收', content: '霜降后人工采挖，去头去尾精选' }, transport: { title: '包装', content: '气柱袋防震，恒温运输' } },
+    aiAdvice: '山药富含黏液蛋白和薯蓣皂苷，健脾养胃，推荐蒸食或煲汤，保留营养最完整。',
+    isRecommended: false, isNew: false, farmerId: 16, farmerName: '温县怀药基地'
+  },
+  {
+    id: 17,
+    name: '信阳毛尖绿茶 250g',
+    price: 128.00,
+    originalPrice: 168.00,
+    unit: '盒',
+    image: 'https://via.placeholder.com/400x400/43A047/FFFFFF?text=信阳毛尖',
+    images: ['https://via.placeholder.com/750x750/43A047/FFFFFF?text=信阳毛尖'],
+    category: '茶叶',
+    origin: '河南信阳',
+    sales: 6500,
+    rating: 4.7,
+    desc: '信阳毛尖核心产区明前茶，一芽一叶，白毫显露，汤色嫩绿明亮，鲜爽回甘。',
+    traceCode: 'ZL202607017',
+    trace: { seed: { title: '品种', content: '信阳群体种，中国十大名茶' }, plant: { title: '种植', content: '大别山区海拔800米云雾茶园' }, fertilize: { title: '管理', content: '有机种植，物理防虫' }, harvest: { title: '采摘', content: '清明前手工采摘，只取一芽一叶' }, transport: { title: '加工', content: '非遗手工炒制，充氮锁鲜包装' } },
+    aiAdvice: '信阳毛尖氨基酸含量高，清新提神不伤胃，建议80°C水温冲泡，可冲泡3-4次。',
+    isRecommended: false, isNew: true, farmerId: 17, farmerName: '信阳毛尖茶园'
+  },
+  {
+    id: 18,
+    name: '古田银耳 500g',
+    price: 39.00,
+    originalPrice: 52.00,
+    unit: '袋',
+    image: 'https://via.placeholder.com/400x400/FAFAFA/9E9E9E?text=银耳',
+    images: ['https://via.placeholder.com/750x750/FAFAFA/9E9E9E?text=银耳'],
+    category: '干货',
+    origin: '福建古田',
+    sales: 15000,
+    rating: 4.6,
+    desc: '中国银耳之乡古田县，代料栽培技术领先，朵大肉厚，胶质丰富，平价滋补佳品。',
+    traceCode: 'ZL202607018',
+    trace: { seed: { title: '菌种', content: '古田银耳优良菌株' }, plant: { title: '栽培', content: '专用菌房恒温恒湿培养' }, fertilize: { title: '管理', content: '无农药全程标准化管理' }, harvest: { title: '采收', content: '成熟期手工采摘，去蒂精选' }, transport: { title: '加工', content: '热风干燥，密封防潮包装' } },
+    aiAdvice: '银耳富含银耳多糖，润肺生津养颜佳品，建议搭配红枣莲子炖煮，每周2-3次。',
+    isRecommended: false, isNew: false, farmerId: 18, farmerName: '古田银耳基地'
+  },
+  {
+    id: 19,
+    name: '增城荔枝干礼盒',
+    price: 88.00,
+    originalPrice: 118.00,
+    unit: '盒',
+    image: 'https://via.placeholder.com/400x400/D32F2F/FFFFFF?text=荔枝干',
+    images: ['https://via.placeholder.com/750x750/D32F2F/FFFFFF?text=荔枝干'],
+    category: '干货',
+    origin: '广东增城',
+    sales: 7800,
+    rating: 4.7,
+    desc: '增城挂绿荔枝产区，桂味糯米糍品种，传统炭焙烘干，保留荔枝原香，四季可享。',
+    traceCode: 'ZL202607019',
+    trace: { seed: { title: '品种', content: '增城桂味/糯米糍荔枝' }, plant: { title: '种植', content: '北回归线黄金地带，红壤坡地' }, fertilize: { title: '管理', content: '有机肥，蜜蜂授粉' }, harvest: { title: '加工', content: '鲜果采摘后24小时内炭焙烘干' }, transport: { title: '包装', content: '独立小包装，充氮防潮礼盒' } },
+    aiAdvice: '荔枝干保留鲜果90%营养，温补养血，每日建议食用5-8颗，可泡茶或煲汤。',
+    isRecommended: false, isNew: false, farmerId: 19, farmerName: '增城荔枝合作社'
+  },
+  {
+    id: 20,
+    name: '新会陈皮老陈皮 100g',
+    price: 198.00,
+    originalPrice: 258.00,
+    unit: '罐',
+    image: 'https://via.placeholder.com/400x400/F57C00/FFFFFF?text=陈皮',
+    images: ['https://via.placeholder.com/750x750/F57C00/FFFFFF?text=陈皮'],
+    category: '干货',
+    origin: '广东新会',
+    sales: 4500,
+    rating: 4.9,
+    desc: '新会核心产区大红柑，十年自然陈化，油室饱满香气醇厚，一两陈皮一两金。',
+    traceCode: 'ZL202607020',
+    trace: { seed: { title: '品种', content: '新会茶枝柑，国家地理标志' }, plant: { title: '种植', content: '银洲湖畔冲积平原，咸淡水交汇' }, fertilize: { title: '管理', content: '有机种植，传统修剪' }, harvest: { title: '制作', content: '冬至前后采摘，三刀法开皮' }, transport: { title: '陈化', content: '传统仓库自然陈化10年，定期翻晒' } },
+    aiAdvice: '陈皮理气健脾燥湿化痰，年份越久价值越高，建议泡水煮茶或入菜煲汤。',
+    isRecommended: true, isNew: false, farmerId: 20, farmerName: '新会陈皮世家'
+  }
+]
+
+// ==================== 商品分类 ====================
+export const categories = [
+  { id: 1, name: '全部', icon: 'all' },
+  { id: 2, name: '水果', icon: 'fruit' },
+  { id: 3, name: '粮油', icon: 'grain' },
+  { id: 4, name: '茶叶', icon: 'tea' },
+  { id: 5, name: '干货', icon: 'dry' },
+  { id: 6, name: '蔬菜', icon: 'vegetable' },
+  { id: 7, name: '禽蛋', icon: 'egg' },
+  { id: 8, name: '蜂蜜', icon: 'honey' }
+]
+
+// ==================== AI推荐商品 ====================
+export const aiRecommendProducts = products.filter(p => p.isRecommended)
+
+// ==================== 新闻资讯 ====================
+export const newsList = [
+  {
+    id: 1,
+    title: '2026年中央一号文件：全面推进智慧农业发展',
+    summary: '国家加大智慧农业投入，推动AI、物联网技术在农业全产业链的应用，助力乡村振兴。',
+    source: '新华社',
+    time: '2026-07-20',
+    image: 'https://via.placeholder.com/300x200/2D8B3E/FFFFFF?text=智慧农业',
+    tag: '政策'
+  },
+  {
+    id: 2,
+    title: 'AI视觉识别技术助力农作物病虫害精准防治',
+    summary: '国内科研团队研发出基于深度学习的作物病虫害AI诊断系统，准确率达95%以上。',
+    source: '科技日报',
+    time: '2026-07-19',
+    image: 'https://via.placeholder.com/300x200/1677FF/FFFFFF?text=AI+农业',
+    tag: '科技'
+  },
+  {
+    id: 3,
+    title: '区块链溯源推动农产品品牌化发展',
+    summary: '一物一码溯源体系帮助消费者建立品牌信任，优质农产品溢价能力显著提升。',
+    source: '农民日报',
+    time: '2026-07-18',
+    image: 'https://via.placeholder.com/300x200/4CAF50/FFFFFF?text=区块链溯源',
+    tag: '产业'
+  },
+  {
+    id: 4,
+    title: '智慧农业市场规模预计突破万亿',
+    summary: '报告显示，2026年中国智慧农业市场规模将突破1.2万亿元，数字化渗透率持续提升。',
+    source: '经济参考报',
+    time: '2026-07-17',
+    image: 'https://via.placeholder.com/300x200/1B5E20/FFFFFF?text=市场规模',
+    tag: '数据'
+  }
+]
+
+// ==================== 今日推荐 ====================
+export const todayRecommend = [
+  {
+    id: 1,
+    title: '时令鲜果·天山雪莲果',
+    subtitle: 'AI根据季节精选',
+    image: 'https://via.placeholder.com/600x300/2D8B3E/FFFFFF?text=天山雪莲果',
+    price: 68.00,
+    desc: '天然有机·清甜脆嫩'
+  },
+  {
+    id: 2,
+    title: '当季滋补·宁夏枸杞',
+    subtitle: '头茬新鲜上市',
+    image: 'https://via.placeholder.com/600x300/FF6B35/FFFFFF?text=宁夏枸杞',
+    price: 45.00,
+    desc: '粒大肉厚·药食同源'
+  },
+  {
+    id: 3,
+    title: '产地直发·赣南脐橙',
+    subtitle: '甜度爆表·维C之王',
+    image: 'https://via.placeholder.com/600x300/FF7A00/FFFFFF?text=赣南脐橙',
+    price: 39.90,
+    desc: '树上自然熟·浓郁香甜'
+  }
+]
+
+// ==================== 趣享农庄 ====================
+export const farmCards = [
+  {
+    id: 1,
+    name: '天山有机农场',
+    image: 'https://via.placeholder.com/320x200/2D8B3E/FFFFFF?text=天山农场',
+    desc: '海拔2000米的纯净雪水灌溉',
+    products: 12,
+    rating: 4.9,
+    tags: ['有机认证', '高海拔种植']
+  },
+  {
+    id: 2,
+    name: '五常稻香合作社',
+    image: 'https://via.placeholder.com/320x200/4CAF50/FFFFFF?text=五常稻田',
+    desc: '核心产区·一年一季',
+    products: 8,
+    rating: 4.8,
+    tags: ['地理标志', '传统农耕']
+  },
+  {
+    id: 3,
+    name: '版纳古茶坊',
+    image: 'https://via.placeholder.com/320x200/1B5E20/FFFFFF?text=古茶园',
+    desc: '300年古茶树·原生态生长',
+    products: 15,
+    rating: 4.9,
+    tags: ['古树茶', '非遗工艺']
+  }
+]
+
+// ==================== 今日助农 ====================
+export const helpFarmers = [
+  {
+    id: 1,
+    title: '助力大凉山苹果走出大山',
+    farmerName: '李大叔',
+    desc: '大凉山海拔2800米生长的糖心苹果，受交通影响销售困难',
+    image: 'https://via.placeholder.com/300x200/FF6B35/FFFFFF?text=大凉山苹果',
+    progress: 68,
+    target: 5000,
+    unit: '箱'
+  },
+  {
+    id: 2,
+    title: '陕北红枣待销·急盼销路',
+    farmerName: '张阿姨',
+    desc: '黄河滩枣自然晾晒，无添加，品质优但销路不畅',
+    image: 'https://via.placeholder.com/300x200/E53935/FFFFFF?text=陕北红枣',
+    progress: 42,
+    target: 3000,
+    unit: '袋'
+  }
+]
+
+// ==================== 猜你喜欢 ====================
+export const guessYouLike = [
+  {
+    id: 101,
+    name: '福建武夷山大红袍',
+    price: 188.00,
+    image: 'https://via.placeholder.com/300x300/388E3C/FFFFFF?text=大红袍',
+    sales: 2341,
+    rating: 4.8
+  },
+  {
+    id: 102,
+    name: '四川丹棱爱媛果冻橙',
+    price: 49.90,
+    image: 'https://via.placeholder.com/300x300/FF9800/FFFFFF?text=果冻橙',
+    sales: 5678,
+    rating: 4.9
+  },
+  {
+    id: 103,
+    name: '青海黑枸杞',
+    price: 128.00,
+    image: 'https://via.placeholder.com/300x300/673AB7/FFFFFF?text=黑枸杞',
+    sales: 1892,
+    rating: 4.7
+  },
+  {
+    id: 104,
+    name: '山东沾化冬枣',
+    price: 35.00,
+    image: 'https://via.placeholder.com/300x300/8BC34A/FFFFFF?text=冬枣',
+    sales: 8765,
+    rating: 4.8
+  }
+]
+
+// ==================== 农户数据 ====================
+export const farmerData = {
+  name: '张学农',
+  farmName: '绿野有机农场',
+  address: '黑龙江省五常市XX镇',
+  farmArea: 120,
+  mainProducts: ['五常大米', '有机大豆', '糯玉米'],
+  certifications: ['有机认证', '绿色食品', '地理标志'],
+  rating: 4.9,
+  totalOrders: 2586,
+  totalRevenue: 156890,
+  phone: '138****6666',
+  email: 'zhangxuenong@farm.com',
+  bankCard: '6222****1234',
+  bankName: '中国农业银行',
+  joinedAt: '2019-03-15',
+  intro: '从事有机农业种植15年，坚持绿色生态种植理念，致力于为消费者提供安全健康的农产品。'
+}
+
+// ==================== 农户经营报表 ====================
+export const statsDashboard = {
+  today: { revenue: 2568, orders: 23, views: 1580, newCustomers: 8 },
+  yesterday: { revenue: 3120, orders: 28, views: 1920, newCustomers: 12 },
+  dailyTrend: [
+    { date: '07-15', revenue: 2860, orders: 24 },
+    { date: '07-16', revenue: 3120, orders: 28 },
+    { date: '07-17', revenue: 2450, orders: 20 },
+    { date: '07-18', revenue: 3580, orders: 31 },
+    { date: '07-19', revenue: 2900, orders: 25 },
+    { date: '07-20', revenue: 1940, orders: 18 },
+    { date: '07-21', revenue: 1840, orders: 18 }
+  ],
+  salesRank: [
+    { id: 101, name: '五常有机大米5kg', sales: 380, revenue: 33820, trend: 1 },
+    { id: 102, name: '黑龙江有机大豆3kg', sales: 245, revenue: 9555, trend: 1 },
+    { id: 103, name: '五常稻花香2.5kg', sales: 188, revenue: 10528, trend: -1 },
+    { id: 104, name: '东北甜糯玉米8根装', sales: 150, revenue: 4800, trend: 1 },
+    { id: 105, name: '有机糙米3kg', sales: 98, revenue: 4704, trend: 0 }
+  ],
+  monthlyRevenue: [
+    { month: '2月', amount: 52000 },
+    { month: '3月', amount: 48500 },
+    { month: '4月', amount: 61000 },
+    { month: '5月', amount: 55800 },
+    { month: '6月', amount: 68000 },
+    { month: '7月', amount: 72350 }
+  ]
+}
+
+// ==================== 农户商品 ====================
+export const farmerProducts = [
+  { id: 101, name: '五常有机大米5kg', category: '粮食作物', price: 89, stock: 500, sold: 380, image: 'https://via.placeholder.com/200x200/4CAF50/FFFFFF?text=五常大米', images: ['https://via.placeholder.com/600x600/4CAF50/FFFFFF?text=五常大米'], status: 'online', origin: '黑龙江五常', spec: '5kg/袋', shelfLife: '12个月', desc: '五常核心产区有机种植，粒粒晶莹，饭香浓郁。', traceId: 'TRC20260501001', createTime: '2026-03-15' },
+  { id: 102, name: '黑龙江有机大豆3kg', category: '豆类作物', price: 39, stock: 800, sold: 245, image: 'https://via.placeholder.com/200x200/FF9800/FFFFFF?text=有机大豆', images: ['https://via.placeholder.com/600x600/FF9800/FFFFFF?text=有机大豆'], status: 'online', origin: '黑龙江黑河', spec: '3kg/袋', shelfLife: '18个月', desc: '非转基因传统品种，蛋白含量高达42%，颗粒饱满。', traceId: 'TRC20260415002', createTime: '2026-04-20' },
+  { id: 103, name: '五常稻花香2.5kg', category: '粮食作物', price: 56, stock: 300, sold: 188, image: 'https://via.placeholder.com/200x200/8BC34A/FFFFFF?text=稻花香', images: ['https://via.placeholder.com/600x600/8BC34A/FFFFFF?text=稻花香'], status: 'online', origin: '黑龙江五常', spec: '2.5kg/袋', shelfLife: '12个月', desc: '稻花香2号品种，米香浓郁，软糯回甘。', traceId: 'TRC20260520003', createTime: '2026-05-10' },
+  { id: 104, name: '东北甜糯玉米8根装', category: '经济作物', price: 32, stock: 200, sold: 150, image: 'https://via.placeholder.com/200x200/FFC107/FFFFFF?text=甜糯玉米', images: ['https://via.placeholder.com/600x600/FFC107/FFFFFF?text=甜糯玉米'], status: 'online', origin: '黑龙江绥化', spec: '8根/箱', shelfLife: '冷藏15天', desc: '当日采摘，皮薄粒满，香甜糯口。', traceId: 'TRC20260601004', createTime: '2026-06-01' },
+  { id: 105, name: '有机糙米3kg', category: '粮食作物', price: 48, stock: 150, sold: 98, image: 'https://via.placeholder.com/200x200/795548/FFFFFF?text=有机糙米', images: ['https://via.placeholder.com/600x600/795548/FFFFFF?text=有机糙米'], status: 'offline', origin: '黑龙江五常', spec: '3kg/袋', shelfLife: '6个月', desc: '保留胚芽和米糠层，富含膳食纤维和维生素B。', traceId: 'TRC20260701005', createTime: '2026-07-01' },
+  { id: 106, name: '东北黑木耳250g', category: '山特产品', price: 35, stock: 0, sold: 320, image: 'https://via.placeholder.com/200x200/5D4037/FFFFFF?text=黑木耳', images: ['https://via.placeholder.com/600x600/5D4037/FFFFFF?text=黑木耳'], status: 'online', origin: '黑龙江大兴安岭', spec: '250g/袋', shelfLife: '24个月', desc: '大兴安岭野生环境培育，朵大肉厚，口感脆嫩。', traceId: 'TRC20260710006', createTime: '2026-07-10' }
+]
+
+// ==================== 农户订单（新版） ====================
+export const farmerOrders = [
+  { id: 'DD20260718001', orderNo: '20260718000001', buyer: { name: '张先生', phone: '138****8888' }, address: { full: '北京市朝阳区XX路XX号' }, products: [{ id: 101, name: '五常有机大米5kg', image: 'https://via.placeholder.com/200x200/4CAF50/FFFFFF?text=五常大米', price: 89, quantity: 2 }], total: 178, freight: 0, status: 'completed', statusText: '已完成', time: '2026-07-18 14:30', payTime: '2026-07-18 14:32', shipTime: '2026-07-18 16:00', logistics: { company: '顺丰速运', no: 'SF1234567890' } },
+  { id: 'DD20260719002', orderNo: '20260719000002', buyer: { name: '李女士', phone: '139****9999' }, address: { full: '上海市浦东新区XX路XX号' }, products: [{ id: 102, name: '黑龙江有机大豆3kg', image: 'https://via.placeholder.com/200x200/FF9800/FFFFFF?text=有机大豆', price: 39, quantity: 3 }, { id: 104, name: '东北甜糯玉米8根装', image: 'https://via.placeholder.com/200x200/FFC107/FFFFFF?text=甜糯玉米', price: 32, quantity: 1 }], total: 149, freight: 10, status: 'shipped', statusText: '运输中', time: '2026-07-19 10:00', payTime: '2026-07-19 10:02', shipTime: '2026-07-19 14:30', logistics: { company: '京东物流', no: 'JD9876543210' } },
+  { id: 'DD20250720003', orderNo: '20250720000003', buyer: { name: '王女士', phone: '137****7777' }, address: { full: '广东省广州市天河区XX大道XX号' }, products: [{ id: 103, name: '五常稻花香2.5kg', image: 'https://via.placeholder.com/200x200/8BC34A/FFFFFF?text=稻花香', price: 56, quantity: 2 }], total: 112, freight: 0, status: 'pending', statusText: '待发货', time: '2026-07-20 08:15', payTime: '2026-07-20 08:16', shipTime: null, logistics: null },
+  { id: 'DD20250720004', orderNo: '20250720000004', buyer: { name: '赵先生', phone: '136****6666' }, address: { full: '浙江省杭州市西湖区XX路XX号' }, products: [{ id: 106, name: '东北黑木耳250g', image: 'https://via.placeholder.com/200x200/5D4037/FFFFFF?text=黑木耳', price: 35, quantity: 5 }], total: 175, freight: 8, status: 'pending', statusText: '待发货', time: '2026-07-20 15:30', payTime: '2026-07-20 15:31', shipTime: null, logistics: null },
+  { id: 'DD20250721005', orderNo: '20250721000005', buyer: { name: '钱女士', phone: '135****5555' }, address: { full: '四川省成都市武侯区XX街XX号' }, products: [{ id: 101, name: '五常有机大米5kg', image: 'https://via.placeholder.com/200x200/4CAF50/FFFFFF?text=五常大米', price: 89, quantity: 1 }, { id: 102, name: '黑龙江有机大豆3kg', image: 'https://via.placeholder.com/200x200/FF9800/FFFFFF?text=有机大豆', price: 39, quantity: 1 }], total: 128, freight: 0, status: 'cancelled', statusText: '已取消', time: '2026-07-21 09:00', payTime: null, shipTime: null, logistics: null }
+]
+
+export const farmerStats = {
+  todayOrders: 23, todaySales: 2568, monthlyOrders: 620, monthlySales: 72350,
+  totalProducts: 6, totalCustomers: 423
+}
+
+// ==================== 农事记录（新版） ====================
+export const farmLogs = [
+  { id: 1, date: '2026-07-20', type: '施肥', field: 'A区水田（五常大米）', detail: '施用有机肥每亩150kg，EM菌发酵液配合沼液叶面喷施。', weather: '晴 28℃', operator: '张学农', images: [], productId: 101 },
+  { id: 2, date: '2026-07-18', type: '除草', field: 'B区旱田（有机大豆）', detail: '人工除草，不使用化学除草剂，保证有机品质。', weather: '多云 25℃', operator: '李帮工', images: [], productId: 102 },
+  { id: 3, date: '2026-07-16', type: '灌溉', field: 'A区水田（五常大米）', detail: '拉林河水灌溉，pH7.2，溶氧8.5mg/L，符合标准。', weather: '晴 30℃', operator: '张学农', images: [], productId: 101 },
+  { id: 4, date: '2026-07-14', type: '病虫害', field: 'C区糯玉米', detail: '发现玉米螟幼虫，采用生物防治：释放赤眼蜂寄生卵。', weather: '阴 26℃', operator: '张学农', images: [], productId: 104 },
+  { id: 5, date: '2026-07-12', type: '播种', field: 'D区蔬菜大棚', detail: '播种秋季有机白菜种子，品种"胶白"，温水浸种杀菌。', weather: '晴 27℃', operator: '王技术员', images: [], productId: null },
+  { id: 6, date: '2026-07-10', type: '采收', field: 'C区糯玉米', detail: '采收第一茬糯玉米800根，冷链打包发往上海仓。', weather: '晴 29℃', operator: '张学农', images: [], productId: 104 },
+  { id: 7, date: '2026-07-08', type: '检测', field: 'A区水田（五常大米）', detail: 'SGS检测128项指标，全部符合有机标准。', weather: '多云 26℃', operator: 'SGS检测', images: [], productId: 101 },
+  { id: 8, date: '2026-07-06', type: '其他', field: '全农场', detail: '合作社季度会议：下半年种植计划和电商渠道拓展方案讨论。', weather: '雨 22℃', operator: '张学农', images: [], productId: null }
+]
+
+// ==================== 溯源记录 ====================
+export const traceRecords = [
+  { id: 'TRC20260501001', productName: '五常有机大米5kg', productImage: 'https://via.placeholder.com/200x200/4CAF50/FFFFFF?text=五常大米', farmName: '绿野有机农场', farmerName: '张学农', origin: '黑龙江五常市', certs: ['有机认证', '绿色食品', '地理标志'], timeline: [
+    { date: '2026-04-10', title: '育苗', detail: '稻花香2号优良品种，温室育苗，温度25-30℃，苗龄30天。' },
+    { date: '2026-05-10', title: '插秧', detail: '人工插秧，株距30cm×15cm，拉林河水灌溉。' },
+    { date: '2026-07-16', title: '灌溉', detail: '拉林河水灌溉，pH7.2，定期水质检测。' },
+    { date: '2026-07-20', title: '施肥', detail: '有机肥150kg/亩，EM菌发酵，叶面喷施。' }
+  ], farmLogRefs: [1, 3, 7] },
+  { id: 'TRC20260415002', productName: '黑龙江有机大豆3kg', productImage: 'https://via.placeholder.com/200x200/FF9800/FFFFFF?text=有机大豆', farmName: '绿野有机农场', farmerName: '张学农', origin: '黑龙江黑河市', certs: ['有机认证', '非转基因认证'], timeline: [
+    { date: '2026-04-20', title: '选种', detail: '黑河43号传统品种，非转基因，发芽率≥95%。' },
+    { date: '2026-05-01', title: '播种', detail: '机械条播，行距50cm，密度1.5万株/亩。' },
+    { date: '2026-07-18', title: '除草', detail: '人工除草，不使用化学除草剂。' }
+  ], farmLogRefs: [2] }
+]
+
+// ==================== AI聊天模拟 ====================
+export const aiChatMock = {
+  advisor: [
+    {
+      role: 'ai',
+      content: '您好！我是您的AI饮食顾问小兴 🍃\n我可以根据您的健康档案和口味偏好，为您推荐最适合的农产品和饮食方案。\n\n请告诉我您今天想了解什么？比如：\n· 想吃什么类型的食物？\n· 有什么健康需求？\n· 想了解某个产地的特色农产品？'
+    },
+    {
+      role: 'user',
+      content: '我最近肠胃不太好，有什么推荐吗？'
+    },
+    {
+      role: 'ai',
+      content: '肠胃敏感的话，建议您选择温和易消化的食物。为您推荐以下几款：\n\n🍠 **天山有机雪莲果**\n富含菊粉和益生元，天然调节肠道菌群，改善消化功能。每天食用100g，可生食或炖汤。\n\n🍚 **五常有机大米**\n软糯易消化，熬粥食用对肠胃非常友好。建议搭配山药一起煮粥。\n\n🍄 **长白山黑木耳**\n富含植物胶质，帮助肠道清洁。建议充分煮熟后食用。\n\n⚠️ 暂时避免生冷、辛辣和油腻食物哦~'
+    }
+  ],
+  nutrition: [
+    {
+      role: 'ai',
+      content: '您好！我是AI营养师小链 🌿\n我可以帮您分析食物的营养成分，制定个性化膳食计划。\n\n您可以：\n· 查询任意食物的营养数据\n· 获取每日膳食搭配建议\n· 了解特定营养素的摄入建议'
+    },
+    {
+      role: 'user',
+      content: '帮我分析一下枸杞的营养价值'
+    },
+    {
+      role: 'ai',
+      content: '📊 **宁夏中宁枸杞营养分析**（每100g）\n\n🔥 能量：258 kcal\n💪 蛋白质：14g\n🧈 脂肪：1.5g\n🌾 碳水化合物：64g\n💎 膳食纤维：16g\n\n**核心营养素：**\n· 枸杞多糖：抗氧化的关键成分\n· 玉米黄质：保护视网膜健康\n· 维生素C：48mg（每日推荐量80%）\n· 铁：6.8mg\n· 锌：1.5mg\n\n💡 **AI建议：**\n根据WHO指南，每日食用15-20g即可满足保健需求。您目前的膳食中肉类摄入较多，枸杞的铁元素可以很好互补。'
+    }
+  ]
+}
+
+// ==================== 收货地址(Mock) ====================
+export const addressList = [
+  {
+    id: 1,
+    name: '张先生',
+    phone: '138****8888',
+    province: '北京市',
+    city: '北京市',
+    district: '朝阳区',
+    detail: 'XX路XX号',
+    isDefault: true
+  },
+  {
+    id: 2,
+    name: '张先生',
+    phone: '138****8888',
+    province: '上海市',
+    city: '上海市',
+    district: '浦东新区',
+    detail: 'XX路XX号',
+    isDefault: false
+  },
+  {
+    id: 3,
+    name: '李女士',
+    phone: '139****9999',
+    province: '广东省',
+    city: '广州市',
+    district: '天河区',
+    detail: 'XX大道XX号',
+    isDefault: false
+  }
+]
+
+// ==================== 优惠券(Mock) ====================
+export const couponList = [
+  { id: 1, title: '满99减20', threshold: 99, discount: 20, expiredAt: '2026-08-31', status: 'available' },
+  { id: 2, title: '满199减50', threshold: 199, discount: 50, expiredAt: '2026-08-31', status: 'available' },
+  { id: 3, title: '新用户专享8折', threshold: 0, discount: 0.2, expiredAt: '2026-09-15', status: 'available', type: 'percent' }
+]
+
+// ==================== 消费者订单历史(Mock) ====================
+export const consumerOrders = [
+  {
+    id: 'DD20260718001',
+    time: '2026-07-18 14:30',
+    status: 'completed',
+    statusText: '已完成',
+    products: [
+      { id: 1, name: '天山有机雪莲果', image: 'https://via.placeholder.com/200x200/2D8B3E/FFFFFF?text=雪莲果', price: 68.00, quantity: 2 }
+    ],
+    total: 136.00,
+    freight: 0,
+    address: { name: '张先生', phone: '138****8888', full: '北京市朝阳区XX路XX号' }
+  },
+  {
+    id: 'DD20260717002',
+    time: '2026-07-17 09:15',
+    status: 'shipped',
+    statusText: '运输中',
+    products: [
+      { id: 4, name: '宁夏中宁枸杞500g', image: 'https://via.placeholder.com/200x200/FF6B35/FFFFFF?text=枸杞', price: 45.00, quantity: 3 }
+    ],
+    total: 135.00,
+    freight: 0,
+    address: { name: '李女士', phone: '139****9999', full: '广东省广州市天河区XX大道XX号' }
+  },
+  {
+    id: 'DD20260715003',
+    time: '2026-07-15 16:45',
+    status: 'completed',
+    statusText: '已完成',
+    products: [
+      { id: 2, name: '五常有机大米5kg', image: 'https://via.placeholder.com/200x200/4CAF50/FFFFFF?text=五常大米', price: 89.00, quantity: 1 },
+      { id: 6, name: '长白山野生黑木耳', image: 'https://via.placeholder.com/200x200/5D4037/FFFFFF?text=黑木耳', price: 52.00, quantity: 2 }
+    ],
+    total: 193.00,
+    freight: 0,
+    address: { name: '张先生', phone: '138****8888', full: '北京市朝阳区XX路XX号' }
+  }
+]
+
+// ==================== 用户数据 ====================
+export const userData = {
+  nickname: '绿色生活家',
+  avatar: 'https://via.placeholder.com/120x120/4CAF50/FFFFFF?text=用户',
+  phone: '138****8888',
+  orders: {
+    pending: 2,
+    shipped: 1,
+    completed: 15
+  },
+  coupons: 3,
+  favorites: 12,
+  healthProfile: {
+    age: 28,
+    gender: '男',
+    allergies: ['无'],
+    preferences: ['清淡', '高蛋白'],
+    goals: ['增强免疫力', '改善睡眠']
+  },
+  charity: {
+    totalHelp: 8,
+    totalAmount: 1680,
+    records: [
+      { date: '2026-07-15', project: '助力大凉山苹果', amount: 68 },
+      { date: '2026-06-20', project: '陕北红枣助农', amount: 52 },
+      { date: '2026-05-10', project: '云南咖啡豆帮扶', amount: 98 }
+    ]
+  },
+  addresses: [
+    {
+      id: 1,
+      name: '张先生',
+      phone: '138****8888',
+      province: '北京市',
+      city: '北京市',
+      district: '朝阳区',
+      detail: 'XX路XX号',
+      isDefault: true
+    },
+    {
+      id: 2,
+      name: '张先生',
+      phone: '138****8888',
+      province: '上海市',
+      city: '上海市',
+      district: '浦东新区',
+      detail: 'XX路XX号',
+      isDefault: false
+    }
+  ],
+  messages: [
+    { id: 1, title: '订单发货通知', content: '您的订单ZL20260718002已发货', time: '07-18 14:30', unread: true },
+    { id: 2, title: '优惠券到账', content: '恭喜获得满99减20优惠券', time: '07-17 10:00', unread: true },
+    { id: 3, title: 'AI健康周报', content: '您的本周饮食健康报告已生成', time: '07-16 09:00', unread: false }
+  ]
+}

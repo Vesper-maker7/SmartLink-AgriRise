@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智链 - AI 能力层</title>
+    <style>
+        :root {
+            --primary: #00C9A7;
+            --primary-dark: #008B6E;
+            --bg: #0a0e14;
+            --card-bg: #141b22;
+            --card-hover: #1a2330;
+            --text: #e0e0e0;
+            --text-secondary: #8899aa;
+            --border: #1e2a35;
+            --accent-1: #00C9A7;
+            --accent-2: #4FC3F7;
+            --accent-3: #FF8A65;
+            --accent-4: #AED581;
+            --accent-5: #BA68C8;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 60px 20px 40px;
+            background: linear-gradient(180deg, rgba(0,201,167,0.08) 0%, transparent 100%);
+            border-bottom: 1px solid var(--border);
+        }
+        .header .logo { font-size: 42px; margin-bottom: 12px; }
+        .header h1 {
+            font-size: 36px;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--accent-1), #4FC3F7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .header .subtitle {
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin-top: 8px;
+        }
+
+        /* Stats */
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            padding: 30px 20px;
+            flex-wrap: wrap;
+        }
+        .stat-card {
+            text-align: center;
+            padding: 20px 32px;
+            background: var(--card-bg);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            min-width: 120px;
+        }
+        .stat-card .num {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--accent-1);
+        }
+        .stat-card .label { color: var(--text-secondary); font-size: 13px; margin-top: 4px; }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Section */
+        .section {
+            margin-bottom: 48px;
+        }
+        .section-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--accent-1);
+            margin-bottom: 20px;
+            padding-left: 16px;
+            border-left: 3px solid var(--accent-1);
+        }
+
+        /* Service Cards */
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 16px;
+        }
+        .service-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 24px;
+            transition: all 0.3s;
+            cursor: default;
+        }
+        .service-card:hover {
+            background: var(--card-hover);
+            border-color: var(--accent-1);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0,201,167,0.08);
+        }
+        .service-card .icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            margin-bottom: 14px;
+        }
+        .icon-rec { background: rgba(0,201,167,0.15); }
+        .icon-nut { background: rgba(174,213,129,0.15); }
+        .icon-chef { background: rgba(255,138,101,0.15); }
+        .icon-trace { background: rgba(79,195,247,0.15); }
+        .icon-farm { background: rgba(186,104,200,0.15); }
+        .service-card h3 { font-size: 17px; margin-bottom: 8px; }
+        .service-card .desc { color: var(--text-secondary); font-size: 13px; margin-bottom: 12px; }
+
+        /* Methods */
+        .methods { display: flex; flex-wrap: wrap; gap: 6px; }
+        .method-tag {
+            font-size: 11px;
+            padding: 3px 10px;
+            border-radius: 20px;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            color: var(--text-secondary);
+            font-family: 'SF Mono', 'Consolas', monospace;
+        }
+
+        /* Arch */
+        .arch-diagram {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 20px 0;
+        }
+        .arch-layer {
+            flex: 1;
+            min-width: 180px;
+            max-width: 240px;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px 16px;
+            text-align: center;
+        }
+        .arch-layer h4 { font-size: 14px; color: var(--accent-1); margin-bottom: 8px; }
+        .arch-layer .items {
+            font-size: 12px;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        /* Routes Mapping */
+        .route-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+        .route-table th {
+            text-align: left;
+            padding: 12px 16px;
+            background: rgba(0,201,167,0.06);
+            color: var(--accent-1);
+            font-weight: 600;
+            font-size: 13px;
+            border-bottom: 2px solid var(--border);
+        }
+        .route-table td {
+            padding: 11px 16px;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-secondary);
+            font-size: 13px;
+        }
+        .route-table tr:hover td { background: rgba(255,255,255,0.02); }
+        .route-table .page-name { color: var(--text); font-weight: 500; white-space: nowrap; }
+        .api-tag {
+            display: inline-block;
+            font-size: 11px;
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin: 1px 2px;
+            background: rgba(0,201,167,0.1);
+            color: var(--accent-1);
+            font-family: 'SF Mono', 'Consolas', monospace;
+        }
+
+        /* Code Block */
+        .code-block {
+            background: #0d1117;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 12px 0;
+            overflow-x: auto;
+            font-family: 'SF Mono', 'Consolas', 'Fira Code', monospace;
+            font-size: 13px;
+            line-height: 1.8;
+            position: relative;
+        }
+        .code-block .lang-tag {
+            position: absolute;
+            top: 8px;
+            right: 14px;
+            font-size: 10px;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .code-block .k { color: #ff7b72; }
+        .code-block .s { color: #a5d6ff; }
+        .code-block .f { color: #d2a8ff; }
+        .code-block .c { color: #8b949e; }
+        .code-block .m { color: #79c0ff; }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 40px;
+            color: var(--text-secondary);
+            font-size: 13px;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+
+        /* File List */
+        .file-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 8px;
+        }
+        .file-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 16px;
+            background: var(--card-bg);
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            font-size: 13px;
+            font-family: 'SF Mono', 'Consolas', monospace;
+        }
+        .file-item .file-icon { font-size: 18px; }
+    </style>
+</head>
+<body>
+
+<!-- Header -->
+<div class="header">
+    <div class="logo">🧠</div>
+    <h1>智链 AI 能力层</h1>
+    <p class="subtitle">AI Layer — 一页纵览全部 AI 服务、Mock 数据、状态管理</p>
+</div>
+
+<!-- Stats -->
+<div class="stats">
+    <div class="stat-card"><div class="num">5</div><div class="label">AI 服务模块</div></div>
+    <div class="stat-card"><div class="num">24+</div><div class="label">API 方法</div></div>
+    <div class="stat-card"><div class="num">11</div><div class="label">可调用页面</div></div>
+    <div class="stat-card"><div class="num">7</div><div class="label">新增文件</div></div>
+</div>
+
+<div class="container">
+
+    <!-- Architecture -->
+    <div class="section">
+        <div class="section-title">📐 架构分层</div>
+        <div class="arch-diagram">
+            <div class="arch-layer">
+                <h4>🖥️ 页面层</h4>
+                <div class="items">11 个 Vue 页面<br>consumer / farmer</div>
+            </div>
+            <div class="arch-layer">
+                <h4>🗄️ Store 层</h4>
+                <div class="items">store/ai.js<br>缓存 · 去重 · 状态</div>
+            </div>
+            <div class="arch-layer">
+                <h4>⚙️ Service 层</h4>
+                <div class="items">5 个 AI 服务模块<br>统一接口 · Mock/API 切换</div>
+            </div>
+            <div class="arch-layer">
+                <h4>📦 Mock 层</h4>
+                <div class="items">mock/ai.js<br>全量模拟数据</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- New Files -->
+    <div class="section">
+        <div class="section-title">📁 新增文件 (7个)</div>
+        <div class="file-list">
+            <div class="file-item"><span class="file-icon">📄</span> src/services/ai/recommend.js</div>
+            <div class="file-item"><span class="file-icon">📄</span> src/services/ai/nutrition.js</div>
+            <div class="file-item"><span class="file-icon">📄</span> src/services/ai/recipe.js</div>
+            <div class="file-item"><span class="file-icon">📄</span> src/services/ai/trace.js</div>
+            <div class="file-item"><span class="file-icon">📄</span> src/services/ai/farmer.js</div>
+            <div class="file-item"><span class="file-icon">📄</span> src/mock/ai.js</div>
+            <div class="file-item"><span class="file-icon">📄</span> src/store/ai.js</div>
+        </div>
+    </div>
+
+    <!-- Services Detail -->
+    <div class="section">
+        <div class="section-title">⚙️ 5 大 AI 服务模块</div>
+        <div class="service-grid">
+
+            <!-- Recommend -->
+            <div class="service-card">
+                <div class="icon icon-rec">🎯</div>
+                <h3>recommend.js · 智能推荐</h3>
+                <p class="desc">基于用户偏好、时令、行为的多维度推荐引擎</p>
+                <div class="methods">
+                    <span class="method-tag">getPersonalizedRecommend(prefs)</span>
+                    <span class="method-tag">getTodayRecommend()</span>
+                    <span class="method-tag">getSeasonRecommend()</span>
+                    <span class="method-tag">getGuessYouLike(userId)</span>
+                </div>
+            </div>
+
+            <!-- Nutrition -->
+            <div class="service-card">
+                <div class="icon icon-nut">🔬</div>
+                <h3>nutrition.js · 营养分析</h3>
+                <p class="desc">营养成分分析、健康评分、饮食建议与安全检测</p>
+                <div class="methods">
+                    <span class="method-tag">analyzeNutrition(productId)</span>
+                    <span class="method-tag">getHealthAdvice(userId)</span>
+                    <span class="method-tag">compareProducts(ids)</span>
+                    <span class="method-tag">checkDietarySafety(userId)</span>
+                </div>
+            </div>
+
+            <!-- Recipe -->
+            <div class="service-card">
+                <div class="icon icon-chef">👨‍🍳</div>
+                <h3>recipe.js · 菜谱生成</h3>
+                <p class="desc">AI 根据食材、时令、口味智能生成多样化菜谱</p>
+                <div class="methods">
+                    <span class="method-tag">getRecipesByProduct(productId)</span>
+                    <span class="method-tag">getSeasonRecipes()</span>
+                    <span class="method-tag">getRecipeDetail(recipeId)</span>
+                    <span class="method-tag">getSmartPairing(productIds)</span>
+                </div>
+            </div>
+
+            <!-- Trace -->
+            <div class="service-card">
+                <div class="icon icon-trace">📍</div>
+                <h3>trace.js · 溯源分析</h3>
+                <p class="desc">区块链溯源数据 AI 解读、可信度评分、产地评估</p>
+                <div class="methods">
+                    <span class="method-tag">analyzeTrace(traceData)</span>
+                    <span class="method-tag">verifyTraceCode(code)</span>
+                    <span class="method-tag">generateTraceReport(code)</span>
+                    <span class="method-tag">evaluateRegionQuality(region)</span>
+                </div>
+            </div>
+
+            <!-- Farmer -->
+            <div class="service-card">
+                <div class="icon icon-farm">🌾</div>
+                <h3>farmer.js · 农户助手</h3>
+                <p class="desc">种植建议、病虫害预警、行情分析、产量预测</p>
+                <div class="methods">
+                    <span class="method-tag">getFarmingAdvice(crop, region)</span>
+                    <span class="method-tag">getPestWarning(region, crop)</span>
+                    <span class="method-tag">getMarketAnalysis(product)</span>
+                    <span class="method-tag">generateProductDesc(product)</span>
+                    <span class="method-tag">getYieldPrediction(crop, region)</span>
+                    <span class="method-tag">getSchedulePlan(crop, month)</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Page Routing Map -->
+    <div class="section">
+        <div class="section-title">🗺️ 页面 → AI 能力映射</div>
+
+        <h4 style="color:var(--accent-2);margin:16px 0 8px;">👤 消费者端</h4>
+        <table class="route-table">
+            <thead><tr><th style="width:200px">页面</th><th>可调用的 AI 方法</th></tr></thead>
+            <tbody>
+                <tr>
+                    <td class="page-name">consumer/home/index.vue</td>
+                    <td>
+                        <span class="api-tag">getPersonalizedRecommend</span>
+                        <span class="api-tag">getTodayRecommend</span>
+                        <span class="api-tag">getSeasonRecommend</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="page-name">consumer/flavor-map/index.vue</td>
+                    <td>
+                        <span class="api-tag">evaluateRegionQuality</span>
+                        <span class="api-tag">getSeasonRecommend</span>
+                        <span class="api-tag">getMarketAnalysis</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="page-name">consumer/mall/index.vue</td>
+                    <td>
+                        <span class="api-tag">getPersonalizedRecommend</span>
+                        <span class="api-tag">getGuessYouLike</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="page-name">consumer/mall/detail.vue</td>
+                    <td>
+                        <span class="api-tag">analyzeNutrition</span>
+                        <span class="api-tag">getRecipesByProduct</span>
+                        <span class="api-tag">verifyTraceCode</span>
+                        <span class="api-tag">generateTraceReport</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="page-name">consumer/profile/index.vue</td>
+                    <td>
+                        <span class="api-tag">getHealthAdvice</span>
+                        <span class="api-tag">checkDietarySafety</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h4 style="color:var(--accent-3);margin:24px 0 8px;">👨‍🌾 农户端</h4>
+        <table class="route-table">
+            <thead><tr><th style="width:200px">页面</th><th>可调用的 AI 方法</th></tr></thead>
+            <tbody>
+                <tr>
+                    <td class="page-name">farmer/home/index.vue</td>
+                    <td>
+                        <span class="api-tag">getFarmingAdvice</span>
+                        <span class="api-tag">getPestWarning</span>
+                        <span class="api-tag">getMarketAnalysis</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="page-name">farmer/products/index.vue</td>
+                    <td>
+                        <span class="api-tag">generateProductDesc</span>
+                        <span class="api-tag">getMarketAnalysis</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="page-name">farmer/trace/index.vue</td>
+                    <td>
+                        <span class="api-tag">analyzeTrace</span>
+                        <span class="api-tag">verifyTraceCode</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="page-name">farmer/farm-log/index.vue</td>
+                    <td>
+                        <span class="api-tag">getFarmingAdvice</span>
+                        <span class="api-tag">getPestWarning</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="page-name">farmer/stats/index.vue</td>
+                    <td>
+                        <span class="api-tag">getYieldPrediction</span>
+                        <span class="api-tag">getMarketAnalysis</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="page-name">farmer/profile/index.vue</td>
+                    <td>
+                        <span class="api-tag">getFarmingAdvice</span>
+                        <span class="api-tag">getYieldPrediction</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Usage Code -->
+    <div class="section">
+        <div class="section-title">💻 调用示例</div>
+
+        <div class="code-block">
+            <span class="lang-tag">JavaScript</span>
+            <span class="c">// 1. 导入 Store</span>
+            <span class="k">import</span> { useAiStore } <span class="k">from</span> <span class="s">'@/store/ai.js'</span>
+            <span class="k">const</span> ai = <span class="f">useAiStore</span>()
+
+            <span class="c">// 2. 推荐</span>
+            <span class="k">const</span> { list } = <span class="k">await</span> ai.<span class="f">getRecommendations</span>({ <span class="m">preferences</span>: [<span class="s">'水果'</span>] })
+
+            <span class="c">// 3. 营养</span>
+            <span class="k">const</span> report = <span class="k">await</span> ai.<span class="f">analyzeProductNutrition</span>(<span class="s">'prod_apple_aksu'</span>)
+
+            <span class="c">// 4. 菜谱</span>
+            <span class="k">const</span> { recipes } = <span class="k">await</span> ai.<span class="f">getRecipesForProduct</span>(<span class="s">'prod_rice_wuchang'</span>)
+
+            <span class="c">// 5. 溯源</span>
+            <span class="k">const</span> result = <span class="k">await</span> ai.<span class="f">verifyCode</span>(<span class="s">'TRACE_001'</span>)
+
+            <span class="c">// 6. 农户</span>
+            <span class="k">const</span> advice = <span class="k">await</span> ai.<span class="f">getFarmingAdvice</span>(<span class="s">'小麦'</span>, <span class="s">'河南'</span>)
+        </div>
+    </div>
+
+    <!-- Switch to Real API -->
+    <div class="section">
+        <div class="section-title">🔄 切换到 DeepSeek / OpenAI</div>
+
+        <div class="code-block">
+            <span class="lang-tag">JavaScript</span>
+            <span class="c">// 任选一个 service 文件，将 provider 改成：</span>
+            <span class="k">const</span> provider = {
+                <span class="m">name</span>: <span class="s">'deepseek'</span>,          <span class="c">// 或 'openai'</span>
+                <span class="m">baseURL</span>: <span class="s">'https://api.deepseek.com/v1'</span>,
+                <span class="m">apiKey</span>: <span class="s">'sk-your-key-here'</span>,
+            }
+
+            <span class="c">// Mock 和真实 API 通过 provider.name 自动隔离，互不影响</span>
+        </div>
+    </div>
+
+</div>
+
+<!-- Footer -->
+<div class="footer">
+    智链 · AI 能力层 &nbsp;|&nbsp; 5 Services · 24+ APIs · 7 New Files &nbsp;|&nbsp; Mock Ready · API Ready
+</div>
+
+</body>
+</html>
